@@ -16,6 +16,7 @@ function getCurrentWebSession(guest) {
             return sessions[i];
         }
     }
+    return null;
 }
 
 
