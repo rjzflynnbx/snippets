@@ -30,9 +30,9 @@ function getDataExtensionWithName(guest, extensionName) {
 }
 
 //todo test
-function getDataExtensionValue(dataExtension) {
+function getDataExtensionValue(dataExtension, dataExtensionKey) {
     if (dataExtension != null) {
-        return dataExtension.values['CLV'];
+        return dataExtension.values[dataExtensionKey];
     }
     return null;
 }
@@ -51,6 +51,26 @@ function getMapFromDataExtension(dataExtension) {
     return dataExtension.values;
 }
 
+
+function getFirstEventOfType(session, eventType) {
+    var events = session.events;
+    for (var i = 0; i < events.length; i++) {
+        if (events[i].type === eventType) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function sessionContainsEventOfType(session, eventType) {
+    var events = session.events;
+    for (var i = 0; i < events.length; i++) {
+        if (events[i].type === eventType) {
+            return true;
+        }
+    }
+    return false;
+}
 
 function getNumberOfEvents(session, eventType) {
     var numberOfEvents = 0;
