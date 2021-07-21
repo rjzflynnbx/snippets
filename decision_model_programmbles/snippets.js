@@ -83,3 +83,11 @@ function getNumberOfEvents(session, eventType) {
     }
     return numberOfEvents;
 }
+
+
+// for a Guest
+// get all the events of type 'eventType'
+// across all sessions + devices etc.
+function getAllEventsOfType(guest, eventType) {
+    return [];
+}
