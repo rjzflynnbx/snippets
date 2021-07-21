@@ -73,7 +73,7 @@ function sessionContainsEventOfType(session, eventType) {
     return false;
 }
 
-function getNumberOfEvents(session, eventType) {
+function getNumberOfEventsInSession(session, eventType) {
     var numberOfEvents = 0;
     for (var i = 0; i < session.events.length; i++) {
         var event = session.events[i];
@@ -82,6 +82,12 @@ function getNumberOfEvents(session, eventType) {
         }
     }
     return numberOfEvents;
+}
+
+
+//TODO
+function getTotalNumberOfEvents(guest){
+    return 0;
 }
 
 
