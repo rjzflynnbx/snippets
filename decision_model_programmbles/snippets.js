@@ -57,10 +57,10 @@ function getFirstEventOfType(session, eventType) {
     var events = session.events;
     for (var i = 0; i < events.length; i++) {
         if (events[i].type === eventType) {
-            return true;
+            return events[i];
         }
     }
-    return false;
+    return null;
 }
 
 function sessionContainsEventOfType(session, eventType) {
