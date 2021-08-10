@@ -1,3 +1,4 @@
+# order data model: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/sitecore-cdp-order-item-data-model-for-batch-api.html
 # Script takes a file, client key and api secret. It will ZIP the file and upload it to the batch API 
 
 import csv
