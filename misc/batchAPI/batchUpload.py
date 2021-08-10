@@ -1,7 +1,8 @@
 # https://developer.boxever.com/reference/overview_batch
 # https://developer.boxever.com/reference/importing-the-batch-file
 # order data model: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/sitecore-cdp-order-data-model-for-batch-api.html
-# Script takes a file, client key and api secret. It will ZIP the file and upload it to the batch API 
+# Script takes a file, client key and api secret.Name your JSON file outputFile.json, and compress into outputFile.json.gz
+# one JSON record per line, see docs for full details on fomatting
 
 import csv
 import json
