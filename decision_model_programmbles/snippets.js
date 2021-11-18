@@ -86,7 +86,7 @@ function getNumberOfEventsInSession(session, eventType) {
 
 
 //TODO
-function getTotalNumberOfEvents(guest){
+function getTotalNumberOfEvents(guest) {
     return 0;
 }
 
@@ -96,4 +96,14 @@ function getTotalNumberOfEvents(guest){
 // across all sessions + devices etc.
 function getAllEventsOfType(guest, eventType) {
     return [];
+}
+
+
+function getAbandonedSession(guest) {
+    var sessions = guest.sessions;
+    for (var i = 0; i < sessions.length; i++) {
+        if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null && sessions[i].cartType === "ABANDONED") {
+            return sessions[i];
+        }
+    }
 }
