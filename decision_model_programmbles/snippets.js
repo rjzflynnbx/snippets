@@ -5,10 +5,10 @@ function getMostRecentWebSession(guest) {
             return sessions[i];
         }
     }
+    return null;
 }
 
 
-//todo:test logic sessions[i].status === 'OPEN'
 function getCurrentWebSession(guest) {
     var sessions = guest.sessions;
     for (var i = 0; i < sessions.length; i++) {
@@ -30,7 +30,6 @@ function getDataExtensionWithName(guest, extensionName) {
     return toReturn;
 }
 
-//todo test
 function getDataExtensionValue(dataExtension, dataExtensionKey) {
     if (dataExtension != null) {
         return dataExtension.values[dataExtensionKey];
@@ -39,7 +38,6 @@ function getDataExtensionValue(dataExtension, dataExtensionKey) {
 }
 
 
-//todo test
 function getDataExtensionValue(guest, dataExtensionName, dataExtensionKey) {
     var dataExtension = getDataExtensionWithName(guest, dataExtensionName,);
     if (dataExtension != null) {
@@ -98,8 +96,19 @@ function getAllEventsOfType(guest, eventType) {
     return [];
 }
 
+function getAllEventsOfType(session, eventType) {
+    var eventsOfType = [];
+    for (var i = 0; i < session.events.length; i++) {
+        var event = session.events[i];
+        if (event.type === eventType) {
+            eventsOfType.push(event);
+        }
+    }
+    return eventsOfType;
+}
 
-function getAbandonedSession(guest) {
+
+function getMostRecentAbandonedSession(guest) {
     var sessions = guest.sessions;
     for (var i = 0; i < sessions.length; i++) {
         if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null && sessions[i].cartType === "ABANDONED") {
